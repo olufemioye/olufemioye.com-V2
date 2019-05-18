@@ -112,3 +112,30 @@ body {
 		transition: .3s ease-in-out;
 	}
 }
+
+.line-link {
+	display: inline-block;
+	text-decoration: none;
+	position: relative;
+	color: $dark;
+	font-weight: $font-weight-normal;
+	z-index: 1;
+	&:hover {
+		color: $white;
+		&::after {
+			height: calc(100% - .25rem);
+		}
+	}
+	&::after {
+		content: '';
+		display: inline-block;
+		z-index: -1;
+		position: absolute;
+		left: 0;
+		bottom: 0.125rem;
+		width: 100%;
+		height: 1px;
+		background: $black;
+		transition: .3s ease-in-out;
+	}
+}

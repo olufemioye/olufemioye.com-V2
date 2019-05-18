@@ -8,7 +8,7 @@
 					I am a Product Designer who codes. I enjoy building cool products that are intuitive and beautiful.
 				</p>
 				<p class="body-text">
-					I live in Lagos, Nigeria and I currently work at REACH.africa, helping people do the best with their finances.
+					I live in Lagos, Nigeria and I currently work at <a href="https://www.reach.africa" class="line-link" target="_blank">REACH.africa</a>, helping people do the best with their finances.
 				</p>
 				<p class="body-text">
 					This website is a curation of my design work and resume, case studies and writings are coming soon. 
