@@ -2,7 +2,7 @@
 	<section class="page-home page-section">
 		<div class="page-container">
 			<h1 class="title-text">Hello 👋🏾</h1>
-			<h4 class="subheading-text">My Name is Olufemi</h4>
+			<h4 class="subheading-text">My name is Olufemi</h4>
 			<div class="page-content text-grey">
 				<p class="body-text">
 					I am a Product Designer who codes. I enjoy building cool products that are intuitive and beautiful.
@@ -27,8 +27,13 @@
 </template>
 
 <script>
+import { store } from '../store'
+
 export default {
-	name: 'Home'
+	name: 'Home',
+	mounted() {
+		store.state.currentPage = 'Home';
+	}
 }
 </script>
 

@@ -11,9 +11,11 @@
 				:class="storeState.navActive ? 'is-active' : '' ">
 
 			<nav class="app-nav">
-				<a class="app-nav__link" v-for="link in pageLinks" 
+				<router-link class="app-nav__link" v-for="link in pageLinks" 
 					:key="link.id" 
-					:href="link.link">{{ link.name }}</a>
+					:to="link.link"
+					@click.native="closeNav()"
+					:class="(storeState.currentPage === link.name) ? 'is-active' : '' ">{{ link.name }}</router-link>
 			</nav>
 
 			<footer class="app-footer">
@@ -90,6 +92,9 @@ export default {
 		},
 		toggleNav() {
 			store.toggleNav();
+		},
+		closeNav() {
+			store.closeNav();
 		}
 	}
 }
@@ -240,6 +245,10 @@ export default {
 				height: 2rem;
 				width: .25rem;
 				background: $white;
+				@include breakpoint-min(md) {
+					top: 0;
+					height: 100%;
+				}
 			}
 		}
 	}

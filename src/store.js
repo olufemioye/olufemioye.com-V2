@@ -1,9 +1,12 @@
 export const store = {
 	state: {
 		navActive: false,
-		activePage: 'Home'
+		currentPage: 'Home'
 	},
 	toggleNav() {
 		this.state.navActive = !this.state.navActive
+	},
+	closeNav() {
+		this.state.navActive = false;
 	}
 }

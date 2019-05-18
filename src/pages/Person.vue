@@ -1,8 +1,8 @@
 <template>
-	<section class="page-person page-section">
+	<section class="page-person page-section" style="padding-bottom: 0">
 		<div class="page-container">
 			<h1 class="title-text">African Man</h1>
-			<div class="page-content">
+			<div class="page-content text-grey">
 				<p class="body-text">
 					Olufemi was born some twenty something years ago. I have spent most of my years in Lagos and Ibadan. I have a Bachelors in Engineering from Obafemi Awolowo Univerisity. 
 				</p>
@@ -20,12 +20,16 @@
 </template>
 
 <script>
-import InstaFeed from '../components/InstaFeed.vue';
+import InstaFeed from '../components/InstaFeed.vue'
+import { store } from '../store'
 
 export default {
 	name: 'Person',
 	components: {
 		InstaFeed
+	},
+	mounted() {
+		store.state.currentPage = 'Person'
 	}
 }
 </script>
