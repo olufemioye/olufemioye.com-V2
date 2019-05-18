@@ -27,6 +27,9 @@ export default {
   min-height: 100vh;
   width: 100%;
   padding: .5rem;
+  @include breakpoint-min(md) {
+    padding: 1.5rem
+  }
 }
 
 </style>
