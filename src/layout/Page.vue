@@ -1,6 +1,8 @@
 <template>
 	<main class="app-page" :class="storeState.navActive ? 'nav-is-active' : '' ">
 		<Home />
+		<Resume />
+		<Person />
 	</main>
 </template>
 
@@ -8,6 +10,8 @@
 import { store } from '../store';
 
 import Home from '../pages/Home.vue'
+import Resume from '../pages/Resume.vue'
+import Person from '../pages/Person.vue'
 
 export default {
 	name: 'Page',
@@ -17,7 +21,9 @@ export default {
 		}
 	},
 	components: {
-		Home
+		Home,
+		Resume,
+		Person
 	}
 }
 </script>
