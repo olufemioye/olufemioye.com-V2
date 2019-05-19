@@ -2,12 +2,16 @@
 	<section class="insta-feed">
 		<h4 class="subheading-text">Latest from my Instagram</h4>
 		<div class="insta-feed__wrap">
-			<div class="insta-post" v-for="ig in instaData" :key="ig.id">
+			<a v-for="ig in instaData"
+				:key="ig.id" 
+				:href="ig.link" 
+				class="insta-post" 
+				target="_blank" title="View on Instagram">
 				<div class="insta-post__img">
 					<img :src="ig.images.standard_resolution.url" :alt="ig.caption.text">
 				</div>
-				<p class="insta-post__caption body-text">{{ ig.caption.text }}</p>
-			</div>
+				<p class="insta-post__caption body-text text-dark">{{ ig.caption.text }}</p>
+			</a>
 			
 		</div>
 	</section>
@@ -43,13 +47,15 @@ export default {
 		}
 		background: rgba($snow, .25);
 		overflow-x: scroll;
+		&::-webkit-scrollbar {
+			width: 0;
+		}
 
 		@include breakpoint-min(md) {
 			margin: 0;
-			padding: 1.5rem;
+			padding: .75rem;
 			display: grid;
-			grid-template-columns: repeat(3, 1fr);
-			grid-gap: 1.5rem;
+			grid-template-columns: repeat(3, 33.333%);
 		}
 	}
 	.insta-post {
@@ -58,20 +64,33 @@ export default {
 		height: auto;
 		margin-right: 1rem;
 		background: $white;
-		// box-shadow: 0 0 .25rem rgba($black, .08), .125rem .125rem .125rem rgba($black, .04);
+		text-decoration: none;
+		box-shadow: .125rem .125rem .125rem rgba($black, .08);
+		transition: .3s ease-in-out all;
+
+		&:hover {
+			box-shadow: .25rem .25rem .5rem rgba($black, .12);
+			transform: translateY(-.25rem);
+
+			.insta-post__img {
+				filter: grayscale(1)
+			}
+		}
 
 		@include breakpoint-min(md) {
 			width: auto;
-			margin: 0;
+			margin: .75rem;
 		}
 	}
 	.insta-post__img {
 		width: 100%;
 		height: auto;
 		background: $snow;
+		transition: inherit;
 		img {
 			width: 100%;
 			display: block;
+
 		}
 	}
 	.insta-post__caption {
