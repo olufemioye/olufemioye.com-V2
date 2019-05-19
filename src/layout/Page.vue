@@ -31,7 +31,7 @@ export default {
 	&.nav-is-active {
 		left: -200px;
 	}
-	@include breakpoint-min(md) {
+	@include breakpoint-min(lg) {
 		width: calc(100% - 240px);
 		left: 0 !important;
 	}

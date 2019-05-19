@@ -83,7 +83,7 @@ export default {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		@include breakpoint-min(md) {
+		@include breakpoint-min(lg) {
 			position: fixed;
 			top: 1.5rem;
 			right: 3.75rem;
@@ -96,7 +96,7 @@ export default {
 		color: white;
 		font-weight: $font-weight-medium;
 		font-size: 1.125rem;
-		@include breakpoint-min(md) {
+		@include breakpoint-min(lg) {
 			font-size: 1.5rem;
 			line-height: 2rem;
 		}
@@ -110,7 +110,7 @@ export default {
 		border: none;
 		outline: none;
 		padding: .5rem .375rem;
-		@include breakpoint-min(md) {
+		@include breakpoint-min(lg) {
 			display: none
 		}
 
@@ -173,7 +173,7 @@ export default {
 		&.is-active {
 			right: 0
 		}
-		@include breakpoint-min(md) {
+		@include breakpoint-min(lg) {
 			width: 240px;
 			right: 0;
 			top: 5.5rem;
@@ -182,7 +182,7 @@ export default {
 	}
 	.app-nav {
 		margin-top: 3.25rem;
-		@include breakpoint-min(md) {
+		@include breakpoint-min(lg) {
 			margin-top: 5rem;
 		}
 	}
@@ -202,7 +202,7 @@ export default {
 		&:hover {
 			color: $white;
 		}
-		@include breakpoint-min(md) {
+		@include breakpoint-min(lg) {
 			padding: 1rem 3.75rem;
 		}
 
@@ -217,7 +217,7 @@ export default {
 				height: 2rem;
 				width: .25rem;
 				background: $white;
-				@include breakpoint-min(md) {
+				@include breakpoint-min(lg) {
 					top: 0;
 					height: 100%;
 				}
@@ -226,7 +226,7 @@ export default {
 	}
 	.app-footer {
 		padding: 0 2.5rem;
-		@include breakpoint-min(md) {
+		@include breakpoint-min(lg) {
 			padding: 0 3.75rem;
 		}
 	}
