@@ -19,14 +19,8 @@
 			</nav>
 
 			<footer class="app-footer">
-				<div class="app-footer__social">
-					<a class="social-link" target="_blank"
-						v-for="social in socialLinks"
-						:href="social.link"
-						:key="social.id">
-						<i :class="social.class"></i>
-					</a>
-				</div>
+				<SocialIcons />
+				
 				<div class="app-footer__stamp">
 					@{{ currentYear() }} <br>
 					Made in Lagos.
@@ -39,8 +33,12 @@
 </template>
 <script>
 import { store } from '../store';
+import SocialIcons from '../components/SocialIcons';
 export default {
 	name: 'Navigation',
+	components: {
+		SocialIcons
+	},
 	data() {
 		return {
 			storeState: store.state,
@@ -57,32 +55,6 @@ export default {
 					name: 'Person',
 					link: '/person'
 				}
-			],
-			socialLinks: [ 
-				{
-					class: 'fab fa-dribbble',
-					link: 'https://dribbble.com/olufemi'
-				},
-				{
-					class: 'fab fa-github',
-					link: 'https://github.com/olufemioye'
-				},
-				{
-					class: 'fab fa-twitter',
-					link: 'https://twitter.com/OlufemiOye'
-				},
-				{
-					class: 'fab fa-instagram',
-					link: 'https://www.instagram.com/olufemioye/'
-				},
-				{
-					class: 'fab fa-linkedin',
-					link: 'https://www.linkedin.com/in/olufemioye/'
-				},
-				{
-					class: 'fab fa-medium',
-					link: 'https://medium.com/@olufemi.oye'
-				}	
 			]
 		}
 	},
@@ -257,22 +229,6 @@ export default {
 		@include breakpoint-min(md) {
 			padding: 0 3.75rem;
 		}
-	}
-	.app-footer__social {
-		display: grid;
-		grid-template-columns: repeat(2, 1.5rem);
-		grid-gap: 2rem;
-		justify-items: end;
-		width: 2.5rem;
-		margin: 0 auto 2.5rem;
-		@include breakpoint-min(md) {
-			margin-bottom: 3.75rem
-		}
-	}
-	.social-link {
-		color: $white;
-		display: inline-block;
-		font-size: 1.5rem;
 	}
 	.app-footer__stamp {
 		color: $theme-accent;
