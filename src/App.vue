@@ -14,7 +14,6 @@ export default {
     Navigation,
     Page
   }
-  
 }
 </script>
 

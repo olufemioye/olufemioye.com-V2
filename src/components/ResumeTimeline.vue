@@ -20,6 +20,7 @@ export default {
 
 <style lang="scss" scoped>
 	@import '../scss/variables';
+	@import '../scss/mixins';
 
 	.resume-timeline {
 		display: flex;
@@ -37,23 +38,33 @@ export default {
 		}
 	}
 	.timeline-role {
-		font-size: 1.25rem;
+		font-size: 1rem;
 		font-weight: $font-weight-light;
-		line-height: 1.5rem;
+		line-height: 1;
 		color: $theme-color;
-		margin: 0 0 .25rem;
+		margin: 0 0 .5rem;
+		@include breakpoint-min(md) {
+			font-size: 1.25rem;
+		}
 	}
 	.timeline-org {
-		font-size: 1rem;
+		font-size: .875rem;
 		font-weight: $font-weight-normal;
 		line-height: 1.25rem;
-		margin: 0 0 .5rem;
+		margin: 0 0 .25rem;
+		@include breakpoint-min(md) {
+			font-size: 1rem;
+			margin: 0 0 .5rem;
+		}
 	}
 	.timeline-date {
-		font-size: 1rem;
+		font-size: .875rem;
 		font-weight: $font-weight-light;
 		color: $grey;
 		line-height: 1.25rem;
 		margin: 0;
+		@include breakpoint-min(md) {
+			font-size: 1rem;
+		}
 	}
 </style>
