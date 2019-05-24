@@ -1,11 +1,11 @@
 <template>
-	<section class="resume-envelope">
+	<a href="https://bit.ly/2EjuVlY" class="resume-envelope" target="_blank">
 		<div class="resume-envelope__back"></div>
 		<div class="resume-paper"></div>
 		<div class="resume-envelope__front">
-			<span class="resume-envelope__cta">Click to download Resume</span>
+			<span class="resume-envelope__cta">Click to view resume</span>
 		</div>
-	</section>
+	</a>
 </template>
 
 <script>

@@ -1,7 +1,7 @@
 @import './variables';
 
 .page-section {
-	padding: 3rem 0;
+	padding: 2.5rem 0;
 	@include breakpoint-min(md) {
 		padding: 6rem 0;
 	}
@@ -10,17 +10,20 @@
 .page-container {
 	padding-left: 1rem;
 	padding-right: 1rem;
-	max-width: 1200px;
+	max-width: 1024px;
 	margin-left: auto;
 	margin-right: auto;
 	@include breakpoint-min(md) {
 		padding-left: 2.5rem;
 		padding-right: 2.5rem;
 	}
+	@include breakpoint-min(xl) {
+		max-width: 1280px;
+	}
 }
 
 .page-content {
-	margin-bottom: 5rem;
+	margin-bottom: 2.5rem;
 	p {
 		max-width: 712px;
 	}

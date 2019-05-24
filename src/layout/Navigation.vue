@@ -1,8 +1,10 @@
 <template>
 	<div class="app-navigation">
 		<header class="app-header">
-			<div class="app-logo">Olufemi Oye.</div>
-			<button class="navigation-menu" @click="toggleNav()" :class="storeState.navActive ? 'is-active' : '' ">
+			<router-link to="/" class="app-logo" @click.native="closeNav">
+				Olufemi Oye.
+			</router-link>
+			<button class="navigation-menu" @click="toggleNav()" :class="menuButtonClass()">
 				<span class="navigation-menu__lines"></span>
 			</button>
 		</header>
@@ -42,6 +44,7 @@ export default {
 	data() {
 		return {
 			storeState: store.state,
+			yScrollPosition: null,
 			pageLinks: [
 				{
 					name: 'Home',
@@ -67,8 +70,23 @@ export default {
 		},
 		closeNav() {
 			store.closeNav();
+		},
+		menuButtonClass() {
+			if (this.storeState.navActive) {
+				return 'is-active'
+			}
+			else if(this.yScrollPosition > 40) {
+				return 'is-scrolled'
+			}
+		},
+		updateScroll() {
+			this.yScrollPosition = window.scrollY;
 		}
+	},
+	mounted() {
+		window.addEventListener('scroll', this.updateScroll);
 	}
+	
 }
 </script>
 <style lang="scss" scoped>
@@ -83,10 +101,12 @@ export default {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		height: 2rem;
 		@include breakpoint-min(lg) {
 			position: fixed;
 			top: 1.5rem;
 			right: 3.75rem;
+			height: auto;
 			width: 5.625rem;
 			text-align: right;
 		}
@@ -96,20 +116,27 @@ export default {
 		color: white;
 		font-weight: $font-weight-medium;
 		font-size: 1.125rem;
+		text-decoration: none;
+		line-height: 1.5rem;
+		padding: .25rem 0;
 		@include breakpoint-min(lg) {
 			font-size: 1.5rem;
 			line-height: 2rem;
+			padding: 0;
 		}
 	}
 	.navigation-menu {
 		display: flex;
-		position: relative;
+		position: fixed;
+		right: .5rem;
 		height: 2rem;
+		z-index: 100;
 		width: 2.25rem;
 		background: rgba($white, .05);
 		border: none;
 		outline: none;
 		padding: .5rem .375rem;
+		transition: .3s ease-in-out all;
 		@include breakpoint-min(lg) {
 			display: none
 		}
@@ -122,6 +149,7 @@ export default {
 				&::before, &::after {
 					top: 50%;
 					left: 50%;
+					background: $white;
 				}
 				&::before {
 					transform: rotate(45deg) translate(-50%);
@@ -131,6 +159,13 @@ export default {
 					transform: rotate(-45deg) translate(-50%);
 					transform-origin: bottom left;
 				}
+			}
+		}
+
+		&.is-scrolled {
+			background: rgba($dark, .05);
+			.navigation-menu__lines {
+				background: $theme-color;
 			}
 		}
 	}
@@ -148,7 +183,7 @@ export default {
 			width: 1.5rem;
 			height: .125rem;
 			border-radius: .0625rem;
-			background: $white;
+			background: inherit;
 			transition: inherit;
 		}
 		&::before {
