@@ -1,5 +1,5 @@
 <template>
-	<main class="app-page" :class="storeState.navActive ? 'nav-is-active' : '' ">
+	<main class="app-page" :class="storeState.navActive ? 'nav-is-active' : '' " @click="closeNav()">
 		<router-view></router-view>
 	</main>
 </template>
@@ -12,6 +12,11 @@ export default {
 	data() {
 		return {
 			storeState: store.state
+		}
+	},
+	methods: {
+		closeNav() {
+			store.closeNav()
 		}
 	}
 }
