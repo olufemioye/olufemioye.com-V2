@@ -3,7 +3,7 @@
 		<div class="resume-envelope__back"></div>
 		<div class="resume-paper"></div>
 		<div class="resume-envelope__front">
-			<span class="resume-envelope__cta">Olufemi's Resume</span>
+			<span class="resume-envelope__cta">Click to download</span>
 		</div>
 	</a>
 </template>
@@ -115,8 +115,6 @@ $magnifiaction: 4/3;
 	font-size: .875rem;
 	text-align: center;
 	margin-bottom: 2rem;
-	// padding: .5rem;
-	// border: 1px solid $back-color;
 }
 
 .resume-paper {
@@ -132,14 +130,14 @@ $magnifiaction: 4/3;
 	animation: 10s bounce infinite;
 	animation-delay: 3s;
 	&::after {
-		content: "Click to download ";
+		content: "Olufemi's Resume";
 		display: block;
 		position: relative;
 		font-size: .75rem;
 		color: $smoke;
 		text-align: center;
 		line-height: 1.5; 
-		margin-top: 3rem;
+		margin-top: 1rem;
 	}
 }
 

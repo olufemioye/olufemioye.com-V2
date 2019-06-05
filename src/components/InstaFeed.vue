@@ -57,6 +57,17 @@ export default {
 			display: grid;
 			grid-template-columns: repeat(3, 33.333%);
 		}
+		&::after {
+			content: '';
+			position: relative;
+			width: .125rem;
+			height: 1rem;
+			display: block;
+			flex: 0 0 auto;
+			@include breakpoint-min(md) {
+				display: none;
+			}
+		}
 	}
 	.insta-post {
 		flex: 0 0 auto;
@@ -66,11 +77,10 @@ export default {
 		background: $white;
 		text-decoration: none;
 		box-shadow: .125rem .125rem .125rem rgba($black, .08);
-		transition: .3s ease-in-out all;
+		transition: .5s ease-in-out all;
 
 		&:hover {
-			box-shadow: .25rem .25rem .5rem rgba($black, .12);
-			transform: translateY(-.25rem);
+			box-shadow: .125rem .5rem .5rem rgba($black, .12);
 
 			.insta-post__img {
 				filter: grayscale(1)

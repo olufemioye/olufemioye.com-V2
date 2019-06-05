@@ -1,5 +1,5 @@
 <template>
-	<section class="page-person page-section" style="padding-bottom: 0">
+	<section class="page-person page-section" style="padding-bottom: 0" data-aos="fade-up">
 		<div class="page-container">
 			<h1 class="title-text">African Man</h1>
 			<div class="page-content text-grey">

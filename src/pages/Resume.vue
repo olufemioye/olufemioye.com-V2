@@ -1,5 +1,5 @@
 <template>
-	<section class="page-resume page-section">
+	<section class="page-resume page-section" data-aos="fade-up">
 		<div class="page-container">
 			<h1 class="title-text">Startup Junkie</h1>
 			<div class="page-content text-grey">
