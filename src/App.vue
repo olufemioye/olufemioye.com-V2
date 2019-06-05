@@ -36,26 +36,6 @@ export default {
   @include breakpoint-min(lg) {
     padding: 1.5rem
   }
-  // Fix this later
-  // &::before {
-  //   content: '';
-  //   display: block;
-  //   position: fixed;
-  //   left: 0;
-  //   top: 0;
-  //   height: 100%;
-  //   width: 100%;
-  //   border: .5rem solid $theme-color;
-  //   border-bottom-width: 0;
-  //   z-index: 10;
-  //   background: transparent;
-  //   pointer-events: none;
-  //   user-select: none;
-  //   box-sizing: border-box;
-  //   @include breakpoint-min(md) {
-  //     border: 0;
-  //   }
-  // }
 }
 
 </style>
