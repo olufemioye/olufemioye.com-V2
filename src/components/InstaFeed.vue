@@ -28,7 +28,7 @@ export default {
 		}
 	},
 	mounted() {
-		axios.get('https://api.instagram.com/v1/users/self/media/recent/?access_token=302493035.1ea9abe.198193c9788a407fac71228a42c83124')
+		axios.get('https://api.instagram.com/v1/users/self/media/recent/?access_token=302493035.20cd535.20dbac4ab0384cd99b4edb8e99b8f1f8')
 			.then( response => (this.instaData = response.data.data.slice(0,3) ) )
 	}
 }
