@@ -1,9 +1,12 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import { routes } from './routes'
-import App from './App.vue'
+import Vue from 'vue';
+import VueMeta from 'vue-meta';
+import VueRouter from 'vue-router';
+import { routes } from './routes';
+import App from './App.vue';
 
+Vue.use(VueMeta)
 Vue.use(VueRouter);
+
 
 const router = new VueRouter({
   mode: 'history',
