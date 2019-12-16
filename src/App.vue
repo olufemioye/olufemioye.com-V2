@@ -19,15 +19,6 @@ export default {
   },
   mounted() {
     AOS.init();
-  },
-  metaInfo: {
-    meta: [
-      { property: 'og:title', content: 'Olufemi Oye' },
-      { property: 'og:description', content: 'The web presence for Olufemi Oye − Digital Product Designer and Frontend Developer, based in Lagos, Nigeria' },
-      { property: 'og:type', content: 'website' },
-      { property: 'og:url', content: 'https://www.olufemioye.com' },
-      { property: 'og:image', content: 'https://www.olufemioye.com/assets/img/meta/olufemioye-opengraph.jpg' }
-    ]
   }
 }
 </script>

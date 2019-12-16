@@ -35,13 +35,6 @@
 		},
 		mounted() {
 			store.state.currentPage = 'Person'
-		},
-		metaInfo: {
-			title: 'About - Olufemi Oye',
-			meta: [
-				{ property: 'og:title', content: 'About - Olufemi Oye'
-			}]
-
 		}
 	}
 </script>
